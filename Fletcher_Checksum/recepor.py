@@ -28,6 +28,11 @@ def fletcher_checksum_receptor(received_message):
         else:
             print("La trama se descarta por detectar errores.")
 
-# Ejemplo de uso:
-trama_recibida = "110101100000101000101001"  # Agregando deliberadamente algunos errores para el ejemplo
-fletcher_checksum_receptor(trama_recibida)
+print("Tramas correctas")
+tramas_correctas = ["1101011000001010001010010000101010001010", "110101100000010010000011101001011", "1000001010001010010000011000110011", "110101010010000011000101000"]
+for trama in tramas_correctas:
+    fletcher_checksum_receptor(trama)
+print("Tramas modificadas")
+tramas_errores = ["1101011010001010001010010000101010011010", "110101100000010010000011101001010", "1000011010001010010000011000110011", "110101010110000011000101000"]
+for trama in tramas_errores:
+    fletcher_checksum_receptor(trama)

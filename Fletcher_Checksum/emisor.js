@@ -13,7 +13,9 @@ function fletcherChecksumEmisor(message) {
   }
   
   // Ejemplo de uso:
-  const mensajeEmisor = "1101011";
-  const tramaConChecksum = fletcherChecksumEmisor(mensajeEmisor);
-  console.log("Trama enviada:", tramaConChecksum);
+  const tramas = ["110101100000101000101001", "11010110000001001", "100000101000101001", "11010101001"];
+  for (var i = 0; i < tramas.length; i++) {
+    const tramaConChecksum = fletcherChecksumEmisor(tramas[i]);
+    console.log("Trama enviada:", tramaConChecksum);
+  }
   
